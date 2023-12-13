@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+}
+h1 {
+    margin: 0;
+}
+
+:root {
+    --border-radius-mainCard: 5px;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(204, 43%, 93%);
+    padding: 20px;
+}
+
+.mainContent {
+    max-width: 640px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "mainCard-1 mainCard-1"
+        "mainCard-2 mainCard-3"
+    ;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
+}
+.mainCard {
+    padding: 40px;
+}
+.mainCard-1 {
+    grid-area: mainCard-1;
+    background-color: #fff;
+    border-top-right-radius: var(--border-radius-mainCard);
+    border-top-left-radius: var(--border-radius-mainCard);
+}
+.mainCard-1 .mainCardTitle {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2ab2af;
+}
+.mainCard-1 .mainCardParagraph {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #c0df34;
+}
+.mainCard-1 .mainCardText {
+    color: #99a7bd;
+    line-height: 25px;
+}
+
+.mainCard-2 {
+    grid-area: mainCard-2;
+    background-color: #2ab2af;
+    border-bottom-left-radius: var(--border-radius-mainCard);
+}
+.mainCard-2 .mainCardTitle {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 22px;
+    color: #fff;
+}
+.mainCard-2 .mainCardPrice {
+    color: #c5c7ca;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+.mainCard-2 .mainCardPrice strong {
+    color: #fff;
+    font-size: 32px;
+}
+.mainCard-2 .mainCardText {
+    color: #fff;
+    margin-bottom: 30px;
+}
+.mainCard-2 .mainCardButton {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: #c0df34;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.mainCard-3 {
+    grid-area: mainCard-3;
+    background-color: #2ab2b0e0;
+    border-bottom-right-radius: var(--border-radius-mainCard);
+}
+.mainCard-3 .mainCardTitle {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 22px;
+    color: #fff;
+}
+.mainCard-3 .mainCardParagraph {
+    color: #d2d5db;
+}
+
+
+/*Media queries*/
+@media (max-width: 490px) {
+    .mainContent {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "mainCard-1"
+            "mainCard-2"
+            "mainCard-3"
+        ;
+    }
+    .mainCard-1 {
+        grid-area: mainCard-1;
+    }
+
+    .mainCard-2 {
+        grid-area: mainCard-2;
+        border-bottom-left-radius: 0;
+    }
+    .mainCard-3 {
+        grid-area: mainCard-3;
+        border-bottom-left-radius: var(--border-radius-mainCard);
+    }
+}
+
+@media (max-width: 350px) {
+    .mainCard-1 .mainCardTitle {
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+    .mainCard-1 .mainCardParagraph {
+        font-size: 16px;
+    }
+    .mainCard-1 .mainCardText {
+        line-height: 20px;
+        font-size: 14px;
+    }
+}
